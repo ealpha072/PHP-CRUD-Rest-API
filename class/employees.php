@@ -17,7 +17,7 @@
 
         public function getAllEmployees(){
             $sql = 'SELECT * FROM '. $this->table. ' ';
-            $stmt = $this->conn->conn->prepare($sql);
+            $stmt = $this->conn->conn-> prepare($sql);
             $stmt->execute();
             return $stmt;
         }
@@ -28,7 +28,7 @@
             $sql = 'INSERT INTO ' .$this->table. ' 
                 SET(name = :name, email=:email, age=:age, designation=:designation, created
                 =:created)';
-            $stmt = $this->conn->prepare($sql);
+            $stmt = $this->conn->conn->prepare($sql);
 
             $this->name = htmlspecialchars(strip_tags($this->name));
             $this->email = htmlspecialchars(strip_tags($this->email));
@@ -53,7 +53,7 @@
         //READ SINGLE EMPLOYEE
         public function readSingle(){
             $sql = 'SELECT * FROM '.$this->table. ' WHERE id=:id LIMIT 0,1';
-            $stmt = $this->conn->prepare($sql);
+            $stmt = $this->conn->conn->prepare($sql);
 
             $stmt->bindParam(':id', $this->id);
             $stmt->execute();
@@ -72,7 +72,7 @@
             $sql = 'UPDATE '.$this->table. ' 
                 SET(name=:name, email:email,  age=:age, designation=:designation, created
                 =:created) WHERE id=:id';
-            $stmt = $this->conn->prepare($sql);
+            $stmt = $this->conn->conn->prepare($sql);
 
             $this->name = htmlspecialchars(strip_tags($this->name));
             $this->email = htmlspecialchars(strip_tags($this->email));
@@ -96,7 +96,7 @@
         //DELETE SINGLE EMPLOYEE
         public function deleteEmployee(){
             $sql = 'DELETE FROM '.$this->table.' WHERE id=:id' ;
-            $stmt = $this->conn->prepare();
+            $stmt = $this->conn->conn->prepare();
 
             $stmt->bindParam(':id', $this->id);
 
