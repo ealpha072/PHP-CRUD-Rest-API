@@ -1,2 +1,2 @@
 # PHP-CRUD-Rest-API
-CRUD rest API  built with PHP implemented with Postman API
+CRUD REST API  built with PHP and utilised using Postman API
